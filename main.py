@@ -89,4 +89,14 @@ def rep(message):
     url = 'https://github.com/teamurao/test_task_yandex_bot'
     bot.send_message(message.chat.id, f'Репозиторий с ботом: {url}')
 
+@bot.message_handler(commands=['github'])
+def github(message):
+    url = 'https://github.com/teamurao'
+    bot.send_message(message.chat.id, f'GitHub: {url}')
+
+@bot.message_handler(commands=['rep'])
+def rep(message):
+    url = 'https://github.com/teamurao/test_task_yandex_bot'
+    bot.send_message(message.chat.id, f'Репозиторий с ботом: {url}')
+
 bot.polling(non_stop=True)
