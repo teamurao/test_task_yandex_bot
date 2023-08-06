@@ -77,11 +77,11 @@ def create_menu():
 @bot.message_handler(func=lambda message: message.text == 'Github')
 def github(message):
     url = 'https://github.com/teamurao'
-    webbrowser.open(url)
+    bot.send_message(message.chat.id, f'GitHub: {url}')
 
 @bot.message_handler(func=lambda message: message.text == 'Репозиторий с ботом')
 def rep(message):
     url = 'https://github.com/teamurao/test_task_yandex_bot'
-    webbrowser.open(url)
+    bot.send_message(message.chat.id, f'Репозиторий с ботом: {url}')
 
 bot.polling(non_stop=True)
