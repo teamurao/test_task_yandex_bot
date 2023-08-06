@@ -22,6 +22,11 @@ def help(message):
 
     bot.send_message(message.chat.id, func, parse_mode='html', reply_markup=reply_markup)
 
+@bot.message_handler(commands=['notion'])
+def notion(message):
+    url = 'https://docs.google.com/document/d/1aob-g_m_-X6sfTk63xz37t71aMycAj8fxoaczBIaheQ/edit?usp=sharing'
+    bot.send_message(message.chat.id, f'Ссылка на гугл-док с ответами: {url}')
+
 
 @bot.message_handler(commands=['selfie'])
 def selfie(message):
@@ -48,7 +53,7 @@ def sql(message):
     bot.send_message(message.chat.id, 'Объяснение, что чем отличается SQL от NoSQL')
 
 @bot.message_handler(commands=['voice_love_story'])
-def sql(message):
+def love_story(message):
     file = open('./love_story.ogg', 'rb')
     di = open('./leonardo-dicaprio.mp4', 'rb')
     bot.send_voice(message.chat.id, file)
